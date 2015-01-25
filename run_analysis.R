@@ -1,4 +1,9 @@
 
+##----------------------------------------------
+## This function reads in the file given by the filepath
+## into a data table, and labels the columns with
+## the given label vector
+##----------------------------------------------
 readAndLabelData <- function (filepath, labels) {
   
   data <- read.table(filepath)    
@@ -6,7 +11,11 @@ readAndLabelData <- function (filepath, labels) {
   data
 }
 
-
+##----------------------------------------------
+## This function merges the training and test data sets
+## extracted from the "Human Activity Recognition Using Smartphones"
+## data, and formats them accordingly
+##----------------------------------------------
 formatData <- function (directory) {
   
   ## Read in activity labels
@@ -83,6 +92,12 @@ formatData <- function (directory) {
 }
 
 
+##----------------------------------------------
+## This creates a tidy data set of the 
+## "Human Activity Recognition Using Smartphones" data
+## and computes the average of mean and standard deviation
+## measurements by subject and activity.
+##----------------------------------------------
 library(dplyr)
 directory <- getwd()
 
